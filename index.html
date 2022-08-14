@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Computer components</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav>
+    <input id="nav-toggle" type="checkbox">
+    <div class="logo">Tabis D<strong>esign</strong></div>
+    <ul class="links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#important">Important</a></li>
+      <li><a href="#details">Details</a></li>
+      <li><a href="#aboutus">About Us</a></li>
+    </ul>
+    <label for="nav-toggle" class="icon-burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </label>
+  </nav>
+
+
+  <div class="home" id="home">
+    <img src="StartPage.png">
+    <h1>Computer&nbsp;&nbsp;components</h1>
+  </div>
+
+  <div class="importantthings" id="important">
+    <i>
+      <h1>Important things</h1>
+    </i>
+  </div>
+
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <img src="matherboard.png" style="width:100%;">
+      <div class="text">Motherboard</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="powersupply.png" style="width:100%;">
+      <div class="text">Power Supply</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="Processor.png" style="width:100%;">
+      <div class="text">Processor</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="ram.png" style="width:100%;">
+      <div class="text">RAM</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+  </div>
+
+
+  <div class="aboutimportantthings" id="details">
+    <img src="matherboard.png">
+    <p>The motherboard is the main circuit board that all other computer components either sit in or are connected to.
+      The motherboard type will determine what kind of processor and memory chips can be installed on the computer,
+      along with what kind of external connections, such as USB, are natively supported. Some motherboards also will
+      include onboard video and sound, removing the need for expansion cards.</p>
+  </div>
+
+  <div class="aboutimportantthings">
+    <img src="powersupply.png">
+    <p>The power supply is generally located in one corner of the back side of your computer case. On the side that
+      faces out of the computer it has a single plug for your power cable and openings for the cooling fan. On the side
+      that faces the inside of the system it has a set of power wires that you use to supply power to all the computer's
+      internal devices.</p>
+  </div>
+
+  <div class="aboutimportantthings">
+    <img src="Processor.png">
+    <p>The processor is probably the most important internal part of your computer, as it is where almost all of the
+      computations required to run the computer take place. The processor sits inside of a small socket near the middle
+      of the motherboard, and on top of executing code for your programs, it also controls how the other computer
+      components communicate and operate.</p>
+  </div>
+
+  <div class="aboutimportantthings">
+    <img src="ram.png">
+    <p>When the processor needs information for a particular program or task, it first loads that data into random
+      access memory. or RAM. RAM is short-term memory, meaning that it gets wiped out every time the computer loses
+      power or gets reset, but its speed of access makes it ideal for being the computer's primary storage.</p>
+  </div>
+
+  <div class="aboutuspart" id="aboutus">
+    <h1>About us</h1>
+    <p>We are here to give you a basic knowledge of computers. There are many other things that we have not mentioned,
+      such as anything about software, which are the input and output parts of the computer, etc...</p>
+  </div>
+
+  <div class="footer">
+    <h2>Copyright © 2022 <a href="">Tabis Design</a>, All rights reserved.</h2>
+  </div>
+
+
+
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>
+</body>
+
+</html>
